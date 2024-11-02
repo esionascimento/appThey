@@ -2,4 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="m3_default_color_primary_text">#FF000000</color>
+    <color name="m3_hint_foreground">#FF707070</color>
 </resources>
