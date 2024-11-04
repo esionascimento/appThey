@@ -17,28 +17,17 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/button_first"
+                android:id="@+id/f_inicio_button_custo_combustivel"
                 android:layout_width="match_parent"
                 android:layout_height="75dp"
-                android:text="@string/next" />
+                android:text="@string/f_cb_button_redirect" />
 
             <Button
-                android:id="@+id/button_ff_regra3"
+                android:id="@+id/f_inicio_button_ff_regra3"
                 android:layout_width="match_parent"
                 android:layout_height="75dp"
-                android:text="Regra de 3" />
+                android:text="@string/f_regra3_title" />
 
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="match_parent"
-                android:layout_height="75dp"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="match_parent"
-                android:layout_height="75dp"
-                android:text="Button" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
