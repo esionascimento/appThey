@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/FirstFragment"
         android:name="com.example.appthey.FirstFragment"
-        android:label="@string/first_fragment_label"
+        android:label="@string/f_home_label_header"
         tools:layout="@layout/fragment_first">
 
         <action
@@ -21,7 +21,7 @@
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.example.appthey.CustoCombustivelFragment"
-        android:label="@string/second_fragment_label"
+        android:label="@string/f_cb_text_header"
         tools:layout="@layout/fragment_custo_combustivel">
 
         <action
