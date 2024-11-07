@@ -32,10 +32,10 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonFirst.setOnClickListener {
+        binding.fInicioButtonCustoCombustivel.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
-        binding.buttonFfRegra3.setOnClickListener {
+        binding.fInicioButtonFfRegra3.setOnClickListener {
             findNavController().navigate(R.id.regra3Fragment)
         }
     }
