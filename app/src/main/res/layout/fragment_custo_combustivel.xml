@@ -139,4 +139,75 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/f_cb_distancia_km" />
 
+    <TextView
+        android:id="@+id/f_cb_label_por_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/f_cb_label_por_3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/f_cb_text_resultado_total" />
+
+    <TextView
+        android:id="@+id/f_cb_label_por_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/f_cb_label_por_4"
+        app:layout_constraintStart_toEndOf="@id/f_cb_label_por_2"
+        app:layout_constraintTop_toBottomOf="@+id/f_cb_text_resultado_total" />
+
+    <TextView
+        android:id="@+id/f_cb_label_por_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/f_cb_label_por_5"
+        app:layout_constraintStart_toEndOf="@id/f_cb_label_por_3"
+        app:layout_constraintTop_toBottomOf="@+id/f_cb_text_resultado_total" />
+
+    <TextView
+        android:id="@+id/f_cb_label_por_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/f_cb_label_por_4"
+        app:layout_constraintTop_toBottomOf="@+id/f_cb_text_resultado_total" />
+
+    <TextView
+        android:id="@+id/f_cb_text_resultado_por_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/f_cb_label_por_2"
+        app:layout_constraintStart_toStartOf="@+id/f_cb_label_por_2"
+        app:layout_constraintTop_toBottomOf="@+id/f_cb_label_por_2" />
+
+    <TextView
+        android:id="@+id/f_cb_text_resultado_por_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/f_cb_label_por_3"
+        app:layout_constraintStart_toStartOf="@+id/f_cb_label_por_3"
+        app:layout_constraintTop_toBottomOf="@+id/f_cb_label_por_3" />
+
+    <TextView
+        android:id="@+id/f_cb_text_resultado_por_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/f_cb_label_por_4"
+        app:layout_constraintStart_toStartOf="@+id/f_cb_label_por_4"
+        app:layout_constraintTop_toBottomOf="@+id/f_cb_label_por_4" />
+
+    <TextView
+        android:id="@+id/f_cb_text_resultado_por_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/f_cb_label_por_5"
+        app:layout_constraintStart_toStartOf="@+id/f_cb_label_por_5"
+        app:layout_constraintTop_toBottomOf="@+id/f_cb_label_por_5" />
 </androidx.constraintlayout.widget.ConstraintLayout>
