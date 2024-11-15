@@ -21,6 +21,10 @@ class CustoCombustivelFragment : Fragment() {
     private lateinit var textResultadoLitroNescessario: TextView
     private lateinit var textResultadoTotal: TextView
     private lateinit var buttonCalcular: Button
+    private lateinit var textResultadoPor2: TextView
+    private lateinit var textResultadoPor3: TextView
+    private lateinit var textResultadoPor4: TextView
+    private lateinit var textResultadoPor5: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,14 +36,17 @@ class CustoCombustivelFragment : Fragment() {
         inputDistanciaKm = view.findViewById(R.id.f_cb_distancia_km)
         inputConsumoKmPorLitro = view.findViewById(R.id.f_cb_consumo_km_litro)
         inputprecoPorLitro = view.findViewById(R.id.f_cb_preco_litro)
-        textResultadoLitroNescessario = view.findViewById(R.id.f_cb_text_resultado_litros_nescessario)
+        textResultadoLitroNescessario =
+            view.findViewById(R.id.f_cb_text_resultado_litros_nescessario)
         textResultadoTotal = view.findViewById(R.id.f_cb_text_resultado_total)
         buttonCalcular = view.findViewById(R.id.f_cb_calcular)
 
-        buttonCalcular.setOnClickListener {
-//            val imm = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
-//            imm?.hideSoftInputFromWindow(view.windowToken, 0)
+        textResultadoPor2 = view.findViewById(R.id.f_cb_text_resultado_por_2)
+        textResultadoPor3 = view.findViewById(R.id.f_cb_text_resultado_por_3)
+        textResultadoPor4 = view.findViewById(R.id.f_cb_text_resultado_por_4)
+        textResultadoPor5 = view.findViewById(R.id.f_cb_text_resultado_por_5)
 
+        buttonCalcular.setOnClickListener {
             val valueDistancioKm = inputDistanciaKm.text.toString().toDoubleOrNull()
             val valueConsumoKmL = inputConsumoKmPorLitro.text.toString().toDoubleOrNull()
             val valuePrecoL = inputprecoPorLitro.text.toString().toDoubleOrNull()
@@ -47,7 +54,12 @@ class CustoCombustivelFragment : Fragment() {
             if (valueDistancioKm != null && valueConsumoKmL != null && valuePrecoL != null) {
                 val resultado = calcularCustoViagem(valueDistancioKm, valueConsumoKmL, valuePrecoL)
                 textResultadoLitroNescessario.text = resultado.litrosNecessarios.toString()
-                textResultadoTotal.text = String.format("R$ %.2f",resultado.custoTotal)
+                textResultadoTotal.text = String.format("R$ %.2f", resultado.custoTotal)
+
+                textResultadoPor2.text = String.format("R$ %.2f", divisao(resultado.custoTotal, 2))
+                textResultadoPor3.text = String.format("R$ %.2f", divisao(resultado.custoTotal, 3))
+                textResultadoPor4.text = String.format("R$ %.2f", divisao(resultado.custoTotal, 4))
+                textResultadoPor5.text = String.format("R$ %.2f", divisao(resultado.custoTotal, 5))
             }
         }
 
@@ -63,11 +75,6 @@ class CustoCombustivelFragment : Fragment() {
 
         val precoL: EditText = view.findViewById(R.id.f_cb_preco_litro)
         precoL.setText(valorPadraoPrecoL)
-
-
-//        binding.buttonSecond.setOnClickListener {
-//            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
-//        }
     }
 
     override fun onDestroyView() {
@@ -79,13 +86,25 @@ class CustoCombustivelFragment : Fragment() {
         val litrosNecessarios: Double,
         val custoTotal: Double
     )
-    fun calcularCustoViagem(distanciaKm: Double, consumoKmPorLitro: Double, precoPorLitro: Double): ResultadoCalculo {
+
+    fun calcularCustoViagem(
+        distanciaKm: Double,
+        consumoKmPorLitro: Double,
+        precoPorLitro: Double
+    ): ResultadoCalculo {
         val litrosNecessarios = arredondarParaCima(distanciaKm / consumoKmPorLitro)
         val custoTotal = litrosNecessarios * precoPorLitro
-        return ResultadoCalculo(arredondarParaCima(litrosNecessarios), arredondarParaCima(custoTotal))
+        return ResultadoCalculo(
+            arredondarParaCima(litrosNecessarios),
+            arredondarParaCima(custoTotal)
+        )
     }
 
     fun arredondarParaCima(valor: Double): Double {
         return ceil(valor * 100) / 100
+    }
+
+    fun divisao(valor: Double, por: Int): Double {
+        return ceil(valor) / por
     }
 }
