@@ -67,17 +67,17 @@
         android:id="@+id/f_cb_calcular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="@string/f_cb_button_calcular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/f_cb_preco_litro" />
+        app:layout_constraintTop_toBottomOf="@+id/f_cb_checkBox_ida_volta" />
 
     <TextView
         android:id="@+id/f_cb_text_necessario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="@string/f_cb_text_resultado_litros_necessarios"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,7 +97,7 @@
         android:id="@+id/f_cb_text_total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="@string/f_cb_text_resultado_custo_total"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -143,8 +143,8 @@
         android:id="@+id/f_cb_label_por_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="/2"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/f_cb_label_por_3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/f_cb_text_resultado_total" />
@@ -153,8 +153,8 @@
         android:id="@+id/f_cb_label_por_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="/3"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/f_cb_label_por_4"
         app:layout_constraintStart_toEndOf="@id/f_cb_label_por_2"
         app:layout_constraintTop_toBottomOf="@+id/f_cb_text_resultado_total" />
@@ -163,8 +163,8 @@
         android:id="@+id/f_cb_label_por_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="/4"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/f_cb_label_por_5"
         app:layout_constraintStart_toEndOf="@id/f_cb_label_por_3"
         app:layout_constraintTop_toBottomOf="@+id/f_cb_text_resultado_total" />
@@ -173,8 +173,8 @@
         android:id="@+id/f_cb_label_por_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="/5"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/f_cb_label_por_4"
         app:layout_constraintTop_toBottomOf="@+id/f_cb_text_resultado_total" />
@@ -210,4 +210,13 @@
         app:layout_constraintEnd_toEndOf="@+id/f_cb_label_por_5"
         app:layout_constraintStart_toStartOf="@+id/f_cb_label_por_5"
         app:layout_constraintTop_toBottomOf="@+id/f_cb_label_por_5" />
+
+    <CheckBox
+        android:id="@+id/f_cb_checkBox_ida_volta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/f_cb_label_checkbox_ida_volta"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/f_cb_preco_litro" />
 </androidx.constraintlayout.widget.ConstraintLayout>
