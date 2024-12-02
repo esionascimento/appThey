@@ -18,6 +18,7 @@
     <string name="f_cb_label_input_distancia_km">Insira a distância a ser percorrida.</string>
     <string name="f_cb_label_input_km_litro">Informe quantos litros o automóvel consome.</string>
     <string name="f_cb_label_input_preco_litro">Insira o preço por litro.</string>
+    <string name="f_cb_label_checkbox_ida_volta">Calcular ida e volta</string>
 
     <!-- Strings used for fragments regra de 3 -->
     <string name="f_regra3_title">Regra de 3</string>
