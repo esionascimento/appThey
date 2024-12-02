@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.TextView
 import com.example.appthey.databinding.FragmentCustoCombustivelBinding
@@ -15,6 +16,8 @@ class CustoCombustivelFragment : Fragment() {
     private var _binding: FragmentCustoCombustivelBinding? = null
     val valorPadraoConsumoKmL = "9"
     val valorPadraoPrecoL = "8"
+    val valorPadraoIdaVolta = true
+
     private lateinit var inputDistanciaKm: EditText
     private lateinit var inputConsumoKmPorLitro: EditText
     private lateinit var inputprecoPorLitro: EditText
@@ -25,6 +28,7 @@ class CustoCombustivelFragment : Fragment() {
     private lateinit var textResultadoPor3: TextView
     private lateinit var textResultadoPor4: TextView
     private lateinit var textResultadoPor5: TextView
+    private lateinit var checkBoxIdaVolta: CheckBox
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,12 +50,17 @@ class CustoCombustivelFragment : Fragment() {
         textResultadoPor4 = view.findViewById(R.id.f_cb_text_resultado_por_4)
         textResultadoPor5 = view.findViewById(R.id.f_cb_text_resultado_por_5)
 
+        checkBoxIdaVolta = view.findViewById(R.id.f_cb_checkBox_ida_volta)
+
         buttonCalcular.setOnClickListener {
-            val valueDistancioKm = inputDistanciaKm.text.toString().toDoubleOrNull()
+            var valueDistancioKm = inputDistanciaKm.text.toString().toDoubleOrNull()
             val valueConsumoKmL = inputConsumoKmPorLitro.text.toString().toDoubleOrNull()
             val valuePrecoL = inputprecoPorLitro.text.toString().toDoubleOrNull()
 
             if (valueDistancioKm != null && valueConsumoKmL != null && valuePrecoL != null) {
+                if (checkBoxIdaVolta.isChecked) {
+                    valueDistancioKm *= 2
+                }
                 val resultado = calcularCustoViagem(valueDistancioKm, valueConsumoKmL, valuePrecoL)
                 textResultadoLitroNescessario.text = resultado.litrosNecessarios.toString()
                 textResultadoTotal.text = String.format("R$ %.2f", resultado.custoTotal)
@@ -75,6 +84,9 @@ class CustoCombustivelFragment : Fragment() {
 
         val precoL: EditText = view.findViewById(R.id.f_cb_preco_litro)
         precoL.setText(valorPadraoPrecoL)
+
+        val idaVolta: CheckBox = view.findViewById(R.id.f_cb_checkBox_ida_volta)
+        idaVolta.isChecked = valorPadraoIdaVolta
     }
 
     override fun onDestroyView() {
