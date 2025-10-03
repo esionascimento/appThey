@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">AppThey</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Configurações</string>
 
     <!-- Strings used for fragments tela inicial -->
     <string name="f_home_label_header">Início</string>
@@ -11,14 +11,19 @@
     <string name="f_cb_title">Simulador básico para calcular combustível</string>
     <string name="f_cb_input_distancia_km">Distância km</string>
     <string name="f_cb_input_km_litro">Km por Litro</string>
+    <string name="f_cb_input_desgaste_km">Desgaste por km</string>
     <string name="f_cb_input_preco_litro">Preço por litro</string>
     <string name="f_cb_button_calcular">Calcular</string>
     <string name="f_cb_text_resultado_litros_necessarios">Litros necessários:</string>
+    <string name="f_cb_text_resultado_valor_combustivel">Valor combustível:</string>
+    <string name="f_cb_text_resultado_valor_desgaste">Valor desgaste:</string>
     <string name="f_cb_text_resultado_custo_total">Custo total:</string>
-    <string name="f_cb_label_input_distancia_km">Insira a distância a ser percorrida.</string>
-    <string name="f_cb_label_input_km_litro">Informe quantos litros o automóvel consome.</string>
-    <string name="f_cb_label_input_preco_litro">Insira o preço por litro.</string>
+    <string name="f_cb_label_input_distancia_km">Distância a ser percorrida.</string>
+    <string name="f_cb_label_input_km_litro">Quantos litros o automóvel consome.</string>
+    <string name="f_cb_label_input_desgaste_km">Valor desgaste por km.</string>
+    <string name="f_cb_label_input_preco_litro">Preço por litro.</string>
     <string name="f_cb_label_checkbox_ida_volta">Calcular ida e volta</string>
+    <string name="f_cb_label_checkbox_isento_motorista">Isento motorista</string>
 
     <!-- Strings used for fragments regra de 3 -->
     <string name="f_regra3_title">Regra de 3</string>
