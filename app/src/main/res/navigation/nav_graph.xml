@@ -13,13 +13,13 @@
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            app:destination="@id/calcularCombustivelFragment" />
         <action
             android:id="@+id/action_FirstFragment_to_secondFragment"
             app:destination="@id/regra3Fragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
+        android:id="@+id/calcularCombustivelFragment"
         android:name="com.example.appthey.CustoCombustivelFragment"
         android:label="@string/f_cb_text_header"
         tools:layout="@layout/fragment_custo_combustivel">
