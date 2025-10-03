@@ -51,6 +51,19 @@
         app:layout_constraintTop_toBottomOf="@+id/f_cb_label_km_litro" />
 
     <EditText
+        android:id="@+id/f_cb_desgaste_km"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="none"
+        android:ems="8"
+        android:hint="@string/f_cb_label_input_desgaste_km"
+        android:inputType="numberDecimal"
+        android:labelFor="@id/f_cb_label_km_litro"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/f_cb_label_desgaste_km" />
+
+    <EditText
         android:id="@+id/f_cb_preco_litro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -63,11 +76,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/f_cb_label_preco_litro" />
 
+    <CheckBox
+        android:id="@+id/f_cb_checkBox_ida_volta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/f_cb_label_checkbox_ida_volta"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/f_cb_preco_litro" />
+
+    <CheckBox
+        android:id="@+id/f_cb_checkBox_isento_motorista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/f_cb_label_checkbox_isento_motorista"
+        app:layout_constraintStart_toStartOf="@+id/f_cb_desgaste_km"
+        app:layout_constraintTop_toBottomOf="@+id/f_cb_desgaste_km" />
+
     <Button
         android:id="@+id/f_cb_calcular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/f_cb_button_calcular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,9 +108,8 @@
         android:id="@+id/f_cb_text_necessario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/f_cb_text_resultado_litros_necessarios"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/f_cb_calcular" />
 
@@ -87,30 +117,62 @@
         android:id="@+id/f_cb_text_resultado_litros_nescessario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/f_cb_text_necessario"
+        app:layout_constraintTop_toTopOf="@+id/f_cb_text_necessario" />
+
+    <TextView
+        android:id="@+id/f_cb_text_resultado_valor_combustivel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/f_cb_text_valor_combustivel"
+        app:layout_constraintTop_toTopOf="@+id/f_cb_text_valor_combustivel" />
+
+    <TextView
+        android:id="@+id/f_cb_text_resultado_valor_desgaste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/f_cb_text_valor_desgaste"
+        app:layout_constraintTop_toTopOf="@+id/f_cb_text_valor_desgaste" />
+
+    <TextView
+        android:id="@+id/f_cb_text_valor_combustivel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/f_cb_text_resultado_valor_combustivel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/f_cb_text_necessario" />
+
+    <TextView
+        android:id="@+id/f_cb_text_valor_desgaste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/f_cb_text_resultado_valor_desgaste"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/f_cb_text_valor_combustivel" />
 
     <TextView
         android:id="@+id/f_cb_text_total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/f_cb_text_resultado_custo_total"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/f_cb_text_resultado_litros_nescessario" />
+        app:layout_constraintTop_toBottomOf="@+id/f_cb_text_valor_desgaste" />
 
     <TextView
         android:id="@+id/f_cb_text_resultado_total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/f_cb_text_total" />
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/f_cb_text_total"
+        app:layout_constraintTop_toTopOf="@+id/f_cb_text_total" />
 
     <TextView
         android:id="@+id/f_cb_label_distancia_km"
@@ -131,92 +193,99 @@
         app:layout_constraintTop_toBottomOf="@+id/f_cb_text_title" />
 
     <TextView
+        android:id="@+id/f_cb_label_desgaste_km"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/f_cb_input_desgaste_km"
+        app:layout_constraintStart_toStartOf="@+id/f_cb_desgaste_km"
+        app:layout_constraintTop_toBottomOf="@+id/f_cb_consumo_km_litro" />
+
+    <TextView
         android:id="@+id/f_cb_label_preco_litro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/f_cb_input_preco_litro"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/f_cb_distancia_km" />
 
     <TextView
-        android:id="@+id/f_cb_label_por_2"
+        android:id="@+id/f_cc_qtd_pessoa_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="/2"
-        app:layout_constraintEnd_toStartOf="@id/f_cb_label_por_3"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@id/f_cc_qtd_pessoa_4"
+        app:layout_constraintStart_toEndOf="@id/f_cc_qtd_pessoa_2"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <TextView
+        android:id="@+id/f_cc_qtd_pessoa_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@id/f_cc_qtd_pessoa_2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/f_cb_text_resultado_total" />
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
 
     <TextView
-        android:id="@+id/f_cb_label_por_3"
+        android:id="@+id/f_cc_qtd_pessoa_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="/3"
-        app:layout_constraintEnd_toStartOf="@id/f_cb_label_por_4"
-        app:layout_constraintStart_toEndOf="@id/f_cb_label_por_2"
-        app:layout_constraintTop_toBottomOf="@+id/f_cb_text_resultado_total" />
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@id/f_cc_qtd_pessoa_3"
+        app:layout_constraintStart_toEndOf="@id/f_cc_qtd_pessoa_1"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
 
     <TextView
-        android:id="@+id/f_cb_label_por_4"
+        android:id="@+id/f_cc_qtd_pessoa_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="/4"
-        app:layout_constraintEnd_toStartOf="@id/f_cb_label_por_5"
-        app:layout_constraintStart_toEndOf="@id/f_cb_label_por_3"
-        app:layout_constraintTop_toBottomOf="@+id/f_cb_text_resultado_total" />
-
-    <TextView
-        android:id="@+id/f_cb_label_por_5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="/5"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/f_cb_label_por_4"
-        app:layout_constraintTop_toBottomOf="@+id/f_cb_text_resultado_total" />
+        app:layout_constraintStart_toEndOf="@id/f_cc_qtd_pessoa_3"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
 
     <TextView
         android:id="@+id/f_cb_text_resultado_por_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@+id/f_cb_label_por_2"
-        app:layout_constraintStart_toStartOf="@+id/f_cb_label_por_2"
-        app:layout_constraintTop_toBottomOf="@+id/f_cb_label_por_2" />
+        app:layout_constraintEnd_toEndOf="@+id/f_cc_qtd_pessoa_1"
+        app:layout_constraintStart_toStartOf="@+id/f_cc_qtd_pessoa_1"
+        app:layout_constraintTop_toBottomOf="@+id/f_cc_qtd_pessoa_1" />
 
     <TextView
         android:id="@+id/f_cb_text_resultado_por_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@+id/f_cb_label_por_3"
-        app:layout_constraintStart_toStartOf="@+id/f_cb_label_por_3"
-        app:layout_constraintTop_toBottomOf="@+id/f_cb_label_por_3" />
+        app:layout_constraintEnd_toEndOf="@+id/f_cc_qtd_pessoa_2"
+        app:layout_constraintStart_toStartOf="@+id/f_cc_qtd_pessoa_2"
+        app:layout_constraintTop_toBottomOf="@+id/f_cc_qtd_pessoa_2" />
 
     <TextView
         android:id="@+id/f_cb_text_resultado_por_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@+id/f_cb_label_por_4"
-        app:layout_constraintStart_toStartOf="@+id/f_cb_label_por_4"
-        app:layout_constraintTop_toBottomOf="@+id/f_cb_label_por_4" />
+        app:layout_constraintEnd_toEndOf="@+id/f_cc_qtd_pessoa_3"
+        app:layout_constraintStart_toStartOf="@+id/f_cc_qtd_pessoa_3"
+        app:layout_constraintTop_toBottomOf="@+id/f_cc_qtd_pessoa_3" />
 
     <TextView
         android:id="@+id/f_cb_text_resultado_por_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@+id/f_cb_label_por_5"
-        app:layout_constraintStart_toStartOf="@+id/f_cb_label_por_5"
-        app:layout_constraintTop_toBottomOf="@+id/f_cb_label_por_5" />
+        app:layout_constraintEnd_toEndOf="@+id/f_cc_qtd_pessoa_4"
+        app:layout_constraintStart_toStartOf="@+id/f_cc_qtd_pessoa_4"
+        app:layout_constraintTop_toBottomOf="@+id/f_cc_qtd_pessoa_4" />
 
-    <CheckBox
-        android:id="@+id/f_cb_checkBox_ida_volta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/f_cb_label_checkbox_ida_volta"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/f_cb_preco_litro" />
+    <View
+        android:id="@+id/divider"
+        android:layout_width="393dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintTop_toBottomOf="@+id/f_cb_text_total"
+        tools:layout_editor_absoluteX="1dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
